@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dissonance Demo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Dissonance Demo</h1>
+    <div class="main-container">
+        <div class="column">
+            <div class="global-controls">
+                <label for="base-freq">Base Frequency (Hz):</label>
+                <input type="number" id="base-freq" value="440" step="1">
+            </div>
+            <div id="note-controls"></div>
+        </div>
+        <div class="column">
+            <div class="overtone-controls">
+                <h2>Overtone Composition</h2>
+                <select id="overtone-preset">
+                    <option value="sine">Sine</option>
+                    <option value="guitar">Guitar</option>
+                    <option value="bell">Bell</option>
+                    <option value="custom">Custom</option>
+                </select>
+                <table id="overtone-table">
+                    <thead>
+                        <tr>
+                            <th>Enabled</th>
+                            <th>Frequency Multiplier</th>
+                            <th>Magnitude</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+                <button id="add-overtone">Add Overtone</button>
+            </div>
+        </div>
+        </div>
+    </div>
+    <div class="clash-container">
+        <h2>Clashes</h2>
+        <table id="clash-table">
+            <thead>
+                <tr>
+                    <th>Note 1</th>
+                    <th>Overtone 1</th>
+                    <th>Note 2</th>
+                    <th>Overtone 2</th>
+                    <th>Abs. Freq. Diff (Hz)</th>
+                    <th>Rel. Freq. Diff (semitones)</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
