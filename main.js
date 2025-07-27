@@ -9,6 +9,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const overtoneTableBody = document.querySelector('#overtone-table tbody');
     const addOvertoneButton = document.getElementById('add-overtone');
     const clashTableBody = document.querySelector('#clash-table tbody');
+    const a2Button = document.getElementById('a2-button');
+    const a3Button = document.getElementById('a3-button');
+    const a4Button = document.getElementById('a4-button');
 
     const overtonePresets = {
         sine: [
@@ -202,6 +205,16 @@ document.addEventListener('DOMContentLoaded', () => {
         });
         calculateAndDisplayClashes();
     });
+
+    function setBaseFreq(freq) {
+        baseFreqInput.value = freq;
+        const event = new Event('input');
+        baseFreqInput.dispatchEvent(event);
+    }
+
+    a2Button.addEventListener('click', () => setBaseFreq(110));
+    a3Button.addEventListener('click', () => setBaseFreq(220));
+    a4Button.addEventListener('click', () => setBaseFreq(440));
 
     // Create initial notes
     for (let i = 0; i < numNotes; i++) {
